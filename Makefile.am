@@ -1,0 +1,10 @@
+bin_PROGRAMS = main
+main_SOURCES = main.c
+main_DEPENDENCIES = libprostokat.la libprostopadloscian.la
+lib_LTLIBRARIES = libprostopadloscian.la
+noinst_LTLIBRARIES = libprostokat.la
+libprostokat_la_SOURCES = libprostokat.c libprostokat.h
+libprostopadloscian_la_SOURCES = libprostopadloscian.c libprostopadloscian.h
+libprostopadloscian_la_LDFLAGS = -version-info 1:1:1
+main_LDADD = libprostokat.la libprostopadloscian.la
+main_LDFLAGS = -rpath /usr/local/lib
